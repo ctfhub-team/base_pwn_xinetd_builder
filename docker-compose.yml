@@ -1,0 +1,32 @@
+version: "2"
+services:
+  builder1604:
+    image: ctfhub/base_pwn_xinetd_1604_builder
+    build:
+      context: docker
+      dockerfile: base_pwn_xinetd_1604.Dockerfile
+    volumes:
+      - ./src:/work/src
+      - ./build/1604:/work/build
+    # command: make
+
+  builder1804:
+    image: ctfhub/base_pwn_xinetd_1804_builder
+    build:
+      context: docker
+      dockerfile: base_pwn_xinetd_1804.Dockerfile
+    volumes:
+      - ./src:/work/src
+      - ./build/1804:/work/build
+    # command: make
+
+  builder2004:
+    image: ctfhub/base_pwn_kernel_xinetd_2004_builder
+    build:
+      context: docker
+      dockerfile: base_pwn_kernel_xinetd_2004.Dockerfile
+    volumes:
+      - ./src:/work/src
+      - ./build/2004:/work/build
+    # command: make
+
